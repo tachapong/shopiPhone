@@ -1,0 +1,7 @@
+{
+  "name": "shopionic",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
