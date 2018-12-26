@@ -13,6 +13,7 @@ export class ListPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient) {
    
     }
+    
     ionViewDidEnter(){
       this.http.get<orders[]>("https://localhost:5001/api/Order").subscribe(
         it => {
