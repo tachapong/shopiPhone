@@ -39,20 +39,16 @@ namespace shopapi.Controllers
             return orders;
         }
 
-        // // GET api/values
-        // [HttpGet]
-        // public ActionResult<Grouporder> Get()
-        // {
-        //     var od = new Grouporder
-        //     {
-        //         ordergroup = orders,
-        //         Average = Math.Round(orders.Average(it => it.Sum), 2)
+        // GET api/values
+        [HttpGet("{sum}")]
+        public double Avg(int sum)
+        {
+            var avg = orders.Average(it=>it.Sum);
+            var bAvg = Math.Round(avg, 2);
+            return bAvg;
 
-        //     };
-        //     return od;
-
-
-        // }
+            
+       }
 
 
     }
