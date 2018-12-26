@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
-import { order } from '../../models/order';
 import { orders } from '../../models/orders';
 
 @Component({
@@ -21,8 +20,5 @@ export class ListPage {
         
         });
     }
-  
-
- 
   
 }
