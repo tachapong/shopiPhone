@@ -12,6 +12,7 @@ namespace shopapi.Controllers
     public class OrderController : ControllerBase
     {
         private static List<Order> orders = new List<Order>();
+        private static int Counter = 1;
 
         // POST api/values
         [HttpPost]
@@ -19,7 +20,7 @@ namespace shopapi.Controllers
         {
             var ordergroup = new Order
             {
-                Id = Guid.NewGuid().ToString(),
+                Id = $"Order0{Counter++}",
                 Name = "iPhone",
                 Amount = order.Amount,
                 Price = order.Price,
@@ -31,7 +32,7 @@ namespace shopapi.Controllers
 
         }
 
-         // GET api/values
+        // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<Order>> Get()
         {
@@ -49,8 +50,8 @@ namespace shopapi.Controllers
 
         //     };
         //     return od;
-            
-            
+
+
         // }
 
 
