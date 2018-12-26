@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using shopapi.Models;
 
 namespace shopapi.Controllers
 {
@@ -20,7 +21,7 @@ namespace shopapi.Controllers
         
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Order order)
         {
         }
 
