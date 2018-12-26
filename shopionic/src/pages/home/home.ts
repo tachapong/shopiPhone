@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
+import { ListPage } from '../list/list';
 
 @Component({
   selector: 'page-home',
@@ -14,6 +15,7 @@ export class HomePage {
 
   }
   Add() {
+    this.navCtrl.push(ListPage)
     this.http.post("https://localhost:5001/api/Order",
       {
         Amount: this.Amount,

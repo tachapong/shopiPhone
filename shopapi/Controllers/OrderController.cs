@@ -11,20 +11,48 @@ namespace shopapi.Controllers
     [ApiController]
     public class OrderController : ControllerBase
     {
-        // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
+        private static List<Order> orders = new List<Order>();
 
-        
         // POST api/values
         [HttpPost]
         public void Post([FromBody] Order order)
         {
+            var ordergroup = new Order
+            {
+                Id = Guid.NewGuid().ToString(),
+                Name = "iPhone",
+                Amount = order.Amount,
+                Price = order.Price,
+                Sum = order.Amount * order.Price,
+                Group = new logic().result(order.Amount * order.Price)
+
+            };
+            orders.Add(ordergroup);
+
         }
 
-       
+         // GET api/values
+        [HttpGet]
+        public ActionResult<IEnumerable<Order>> Get()
+        {
+            return orders;
+        }
+
+        // // GET api/values
+        // [HttpGet]
+        // public ActionResult<Grouporder> Get()
+        // {
+        //     var od = new Grouporder
+        //     {
+        //         ordergroup = orders,
+        //         Average = Math.Round(orders.Average(it => it.Sum), 2)
+
+        //     };
+        //     return od;
+            
+            
+        // }
+
+
     }
 }
